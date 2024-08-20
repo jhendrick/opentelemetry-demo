@@ -25,8 +25,6 @@ RUN curl -s https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 
 
 # Install K3s
 RUN curl -sfL https://get.k3s.io | sh -
-    && cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-    && chown $(id -u):$(id -g) ~/.kube/config
 
 RUN /tmp/scripts/docker.sh
 
