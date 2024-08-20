@@ -12,6 +12,14 @@
 	// some base images require a specific user name
 	"remoteUser": "vscode",
 
+	"features": {
+    		"ghcr.io/microsoft/k3s-on-host": {
+       		 	"k3sVersion": "latest",
+        		"criDockerd": "true",
+        		"cluster_enabled": "true"
+    		}
+	},
+
 	// Install extensions
 	"customizations": {
 		"vscode": {	
