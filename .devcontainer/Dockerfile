@@ -24,8 +24,7 @@ RUN curl -sSL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernete
 RUN curl -s https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash -
 
 # Install K3s
-# Installing using devcontianer feature
-# RUN curl -sfL https://get.k3s.io | sh -
+RUN curl -sfL https://get.k3s.io | sh -
 
 RUN /tmp/scripts/docker.sh
 
