@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# copy config to user dir to use helm 
-cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-chown $(id -u):$(id -g) ~/.kube/config
+kind create cluster --config .devcontainer/kind-cluster.yml --wait 300s
 
 # deploy
-chmod +x .devcontainer/deployment.sh && .devcontainer/deployment.sh
+# chmod +x .devcontainer/deployment.sh && .devcontainer/deployment.sh
