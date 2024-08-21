@@ -12,9 +12,9 @@
 	// some base images require a specific user name
 	"remoteUser": "vscode",
 
-	"features": {
-		"ghcr.io/rio/features/k3d:1": {}
-	},
+	//"features": {
+	//	"ghcr.io/rio/features/k3d:1": {}
+	//},
 
 	// Install extensions
 	"customizations": {
