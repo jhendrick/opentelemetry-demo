@@ -61,7 +61,7 @@
 	 		"description": "eg. https://abc12345.live.dynatrace.com"
 		},
 		  "DT_TOKEN": {
-	    	        "description": "Dynatrace API token with these permissions: Ingest metrics, Ingest logs, Ingest events, Ingest OpenTelemetry, Read metrics, Write settings"
+	    	        "description": "Dynatrace API token"
 		}
 	}
 }
