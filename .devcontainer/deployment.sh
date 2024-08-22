@@ -8,8 +8,8 @@ fi
 kind create cluster --config .devcontainer/kind-cluster.yaml --wait 300s
 
 # replace token and endpoint with user provided values
-sed -i -e 's/DT_TOKEN/'"$DT_TOKEN"'/g' .devcontainer/dynakube.yaml 
-sed -i -e 's/DT_ENDPOINT/'"$DT_ENDPOINT"'/g' .devcontainer/dynakube.yaml
+sed -i -e "s/DT_TOKEN/$DT_TOKEN/g" .devcontainer/dynakube.yaml 
+sed -i -e "s/DT_ENDPOINT/$DT_ENDPOINT/g" .devcontainer/dynakube.yaml
 
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
