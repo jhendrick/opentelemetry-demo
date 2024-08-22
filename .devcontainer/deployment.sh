@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [ -z "${DT_TOKEN}" || -z "${DT_ENDPOINT}"]; then
     echo "Required variables DT_TOKEN and DT_ENDPOINT are not set. Exiting..."
