@@ -4,3 +4,5 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
     --create-namespace \
     --namespace dynatrace \
     --atomic
+
+kubectl apply -f dynakube.yaml
