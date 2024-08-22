@@ -18,4 +18,4 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
     --atomic
 
 # Apply the Dynakube in ApplicationOnly mode
-kubectl apply -f dynakube.yaml
+kubectl apply -f .devcontainer/dynakube.yaml
