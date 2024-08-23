@@ -11,10 +11,12 @@ kind create cluster --config .devcontainer/kind-cluster.yaml --wait 300s
 DT_ENDPOINT=$(echo "$DT_ENDPOINT" | sed "s,/$,,")
 
 # replace token and endpoint with user provided values
-sed -i "s|DT_TOKEN|$DT_TOKEN|g" .devcontainer/dynakube.yaml 
+# sed -i "s|DT_TOKEN|$DT_TOKEN|g" .devcontainer/dynakube.yaml 
 sed -i "s|DT_ENDPOINT|$DT_ENDPOINT|g" .devcontainer/dynakube.yaml
 
 cat .devcontainer/dynakube.yaml
+
+kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=$DT_TOKEN"
 
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
