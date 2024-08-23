@@ -14,6 +14,8 @@ DT_ENDPOINT=$(echo "$DT_ENDPOINT" | sed "s,/$,,")
 sed -i "s|DT_TOKEN|$DT_TOKEN|g" .devcontainer/dynakube.yaml 
 sed -i "s|DT_ENDPOINT|$DT_ENDPOINT|g" .devcontainer/dynakube.yaml
 
+cat .devcontainer/dynakube.yaml
+
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
     --create-namespace \
