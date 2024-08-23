@@ -21,7 +21,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
     --atomic
 
 # create the secret with the user provided API token
-# kubectl -n dynatrace create secret generic kind-k8s --from-literal="apiToken=$DT_TOKEN"
+kubectl -n dynatrace create secret generic kind-k8s --from-literal="apiToken=$DT_TOKEN"
 
 # Apply the Dynakube in ApplicationOnly mode
-# kubectl apply -f .devcontainer/dynakube.yaml
+kubectl apply -f .devcontainer/dynakube.yaml
