@@ -13,7 +13,7 @@ echo "Removed trailing slashes in $DT_ENDPOINT"
 
 # replace token and endpoint with user provided values
 # sed -i "s|DT_TOKEN|$DT_TOKEN|g" .devcontainer/dynakube.yaml 
-sed -i "s|DT_ENDPOINT|$DT_ENDPOINT|g" .devcontainer/dynakube.yaml
+sed -i "s|DT_ENDPOINT|$DT_ENDPOINT|" .devcontainer/dynakube.yaml
 
 cat .devcontainer/dynakube.yaml
 
