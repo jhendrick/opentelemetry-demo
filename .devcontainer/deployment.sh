@@ -13,17 +13,17 @@ echo "Removed trailing slashes in $DT_ENDPOINT"
 
 # replace token and endpoint with user provided values
 # sed -i "s|DT_TOKEN|$DT_TOKEN|g" .devcontainer/dynakube.yaml 
-sed -i -e "s|DT_ENDPOINT|$DT_ENDPOINT|" .devcontainer/dynakube.yaml
+# sed -i -e "s|DT_ENDPOINT|$DT_ENDPOINT|" .devcontainer/dynakube.yaml
 
 cat .devcontainer/dynakube.yaml
-
-kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=$DT_TOKEN"
 
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
     --create-namespace \
     --namespace dynatrace \
     --atomic
+
+kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=$DT_TOKEN"    
 
 # Apply the Dynakube in ApplicationOnly mode
 kubectl apply -f .devcontainer/dynakube.yaml
