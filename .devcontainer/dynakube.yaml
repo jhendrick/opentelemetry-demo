@@ -3,7 +3,7 @@ data:
   apiToken: ${DT_TOKEN}
 kind: Secret
 metadata:
-  name: kind-k8s-5
+  name: kind-k8s
   namespace: dynatrace
 type: Opaque
 ---
