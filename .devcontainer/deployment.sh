@@ -23,3 +23,12 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 # Apply the Dynakube in ApplicationOnly mode
 # using envsubst for env var replacement
 envsubst < .devcontainer/dynakube.yaml | kubectl apply -f -
+
+# create Otel collector credentials
+kubectl create secret generic dynatrace-otelcol-dt-api-credentials \
+--from-literal=DT_ENDPOINT=$DT_ENDPOINT/api/v2/otlp \
+--from-literal=DT_API_TOKEN=$DT_API_TOKEN
+
+# Add OpenTelemetry Helm Charts
+helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+helm repo update
