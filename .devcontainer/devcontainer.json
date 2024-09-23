@@ -65,5 +65,6 @@
 		},
 		  "DT_API_TOKEN": {
 	    	        "description": "Dynatrace Ingest API token"
+		}
 	}
 }
