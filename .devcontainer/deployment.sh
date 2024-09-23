@@ -33,3 +33,6 @@ kubectl create secret generic dynatrace-otelcol-dt-api-credentials \
 # Add OpenTelemetry Helm Charts
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 helm repo update
+
+# Install Dynatrace Otel Collector
+helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f collector-values.yaml
