@@ -60,8 +60,10 @@
 	 	  "DT_ENDPOINT": {
 	 		"description": "eg. https://abc12345.live.dynatrace.com"
 		},
-		  "DT_TOKEN": {
-	    	        "description": "Dynatrace API token"
-		}
+		  "DT_OPERATOR_TOKEN": {
+	    	        "description": "Dynatrace Operator token"
+		},
+		  "DT_API_TOKEN": {
+	    	        "description": "Dynatrace Ingest API token"
 	}
 }
