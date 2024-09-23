@@ -12,6 +12,15 @@ nodes:
   extraPortMappings:
   - hostPort: 80
     containerPort: 80
-    protocol: TCP
   - hostPort: 8080
     containerPort: 8080
+    protocol: TCP
+  - hostPort: 4317
+    containerPort: 4317
+  - hostPort: 4318
+    containerPort: 4318
+  - hostPort: 30100
+    containerPort: 30100
+    protocol: TCP
+  - hostPort: 30105
+    containerPort: 30105
