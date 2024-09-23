@@ -12,7 +12,8 @@ kind create cluster --config .devcontainer/kind-cluster.yaml --wait 300s
 DT_ENDPOINT=$(echo "$DT_ENDPOINT" | sed "s,/$,,")
 echo "Removed any trailing slashes in DT_ENDPOINT"
 # Base64 encode DT_TOKEN, remove newlines that are auto added
-DT_TOKEN=$(echo -n $DT_TOKEN | base64 -w 0)
+DT_OPERATOR_TOKEN=$(echo -n $DT_OPERATOR_TOKEN | base64 -w 0)
+DT_API_TOKEN=$(echo -n $DT_API_TOKEN | base64 -w 0)
 
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
