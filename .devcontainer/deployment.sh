@@ -7,12 +7,12 @@ fi
 
 kind create cluster --config .devcontainer/kind-cluster.yaml --wait 300s
 
+# ENV var pre-processing
 # remove trailing slash on DT_ENDPOINT if it exists
 DT_ENDPOINT=$(echo "$DT_ENDPOINT" | sed "s,/$,,")
-echo "Removed trailing slashes in $DT_ENDPOINT"
-
-# replace the endpoint with user provided value
-# sed -i "s|DT_ENDPOINT|$DT_ENDPOINT|" .devcontainer/dynakube.yaml
+echo "Removed any trailing slashes in DT_ENDPOINT"
+# Base64 encode DT_TOKEN, remove newlines that are auto added
+DT_TOKEN=$(echo -n $DT_TOKEN | base64 -w 0)
 
 # install the Dynatrace operator
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -22,4 +22,4 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 # Apply the Dynakube in ApplicationOnly mode
 # using envsubst for env var replacement
-envsubst < .devcontainer/dynakube.yaml | kubectl apply -f -    
+envsubst < .devcontainer/dynakube.yaml | kubectl apply -f -
