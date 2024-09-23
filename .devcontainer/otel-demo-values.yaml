@@ -4,6 +4,12 @@ jaeger:
   enabled: false
 grafana:
   enabled: false
+prometheus:
+  enabled: false
+
+components:
+  accountingService:
+    enabled: false
 
 default:
   env:
