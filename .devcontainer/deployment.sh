@@ -36,3 +36,6 @@ helm repo update
 
 # Install Dynatrace Otel Collector
 helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f .devcontainer/collector-values.yaml
+
+# Install the Otel demo app
+helm upgrade -i my-otel-demo open-telemetry/opentelemetry-demo -f .devcontainer/otel-demo-values.yaml
