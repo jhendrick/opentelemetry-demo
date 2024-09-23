@@ -6,6 +6,8 @@ grafana:
   enabled: false
 prometheus:
   enabled: false
+opensearch:
+  enabled: false
 
 components:
   accountingService:
