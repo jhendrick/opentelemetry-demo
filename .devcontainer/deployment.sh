@@ -35,4 +35,4 @@ helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm
 helm repo update
 
 # Install Dynatrace Otel Collector
-helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f collector-values.yaml
+helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f .devcontainer/collector-values.yaml
