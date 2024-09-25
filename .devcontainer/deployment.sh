@@ -42,3 +42,6 @@ helm upgrade -i my-otel-demo open-telemetry/opentelemetry-demo -f .devcontainer/
 # Wait for pods frontend and flagd pods to be ready before we use them
 kubectl rollout status deployment my-otel-demo-frontendproxy
 kubectl rollout status deployment my-otel-demo-flagd
+
+# Apply configmap with high CPU enabled for the Ad Service
+kubectl apply -f .devcontainer/flags.yaml
