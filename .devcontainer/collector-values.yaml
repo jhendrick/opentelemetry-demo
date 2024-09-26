@@ -128,11 +128,11 @@ config:
     pipelines:
       traces:
         receivers: [otlp]
-        processors: []
+        processors: [k8sattributes, transform]
         exporters: [otlphttp]
       metrics:
         receivers: [otlp]
-        processors: [k8sattributes, transform]
+        processors: []
         exporters: [otlphttp]
       logs:
         receivers: [otlp]
