@@ -29,6 +29,9 @@ kubectl create secret generic dynatrace-otelcol-dt-api-credentials \
 --from-literal=DT_ENDPOINT=$DT_ENDPOINT/api/v2/otlp \
 --from-literal=DT_API_TOKEN=$DT_API_TOKEN
 
+# Install RBAC items so collector can talk to k8s API
+kubectl apply -f collector-rbac.yaml
+
 # Add OpenTelemetry Helm Charts
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 helm repo update
