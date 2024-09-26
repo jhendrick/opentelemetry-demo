@@ -32,7 +32,7 @@ config:
     filelog: null
 
   processors:
-    cumulativetodelta:
+    #cumulativetodelta:
 
     k8sattributes:
       extract:
@@ -128,7 +128,7 @@ config:
     pipelines:
       traces:
         receivers: [otlp]
-        processors: [cumulativetodelta]
+        processors: []
         exporters: [otlphttp]
       metrics:
         receivers: [otlp]
